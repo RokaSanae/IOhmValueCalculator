@@ -18,6 +18,7 @@
     "angular-ui-router": "^0.2.18",
     "jquery": "^2.2.3",
     "angular-route": "^1.5.3",
-    "angular-animate": "^1.5.3"
+    "angular-animate": "^1.5.3",
+    "angular-sanitize": "~1.5.3"
   }
 }

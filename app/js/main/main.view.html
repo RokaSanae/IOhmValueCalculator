@@ -1,69 +1,44 @@
+<div class="title">Electronic color code Calculator</div>
 <div class="main">
-	<div style="flex:0.2">
-		<div>Select Your first Color Band:</div>
+	<div class="col">
+		<div class="header">First Color Band:</div>
 		<md-radio-group ng-model="main.bandA" ng-change="main.getResult()">
-			<md-radio-button value="Black">Black</md-radio-button>
-			<md-radio-button value="Brown">Brown</md-radio-button>
-			<md-radio-button value="Red">Red</md-radio-button>
-			<md-radio-button value="Orange">Orange</md-radio-button>
-			<md-radio-button value="Yellow">Yellow</md-radio-button>
-			<md-radio-button value="Green">Green</md-radio-button>
-			<md-radio-button value="Blue">Blue</md-radio-button>
-			<md-radio-button value="Violet">Violet</md-radio-button>
-			<md-radio-button value="Gray">Gray</md-radio-button>
-			<md-radio-button value="White">White</md-radio-button>
+			<md-radio-button flex ng-repeat="option in main.a" value="{{option}}">
+				<div class="label" ng-class="option">{{option}}</div>
+			</md-radio-button>
     	</md-radio-group>
 
 	</div>
-	<div style="flex:0.2">
-		<div>Select Your second Color Band:</div>
+	<div class="col">
+		<div class="header">Second Color Band:</div>
 		<md-radio-group ng-model="main.bandB" ng-change="main.getResult()">
-	      	<md-radio-button value="Black">Black</md-radio-button>
-			<md-radio-button value="Brown">Brown</md-radio-button>
-			<md-radio-button value="Red">Red</md-radio-button>
-			<md-radio-button value="Orange">Orange</md-radio-button>
-			<md-radio-button value="Yellow">Yellow</md-radio-button>
-			<md-radio-button value="Green">Green</md-radio-button>
-			<md-radio-button value="Blue">Blue</md-radio-button>
-			<md-radio-button value="Violet">Violet</md-radio-button>
-			<md-radio-button value="Gray">Gray</md-radio-button>
-			<md-radio-button value="White">White</md-radio-button>
+	      	<md-radio-button flex ng-repeat="option in main.b" value="{{option}}">
+	      		<div class="label" ng-class="option">{{option}}</div>
+	      	</md-radio-button>
     	</md-radio-group>
 	</div>
-	<div style="flex:0.2">
-		<div>Select Your third Color Band:</div>
+	<div class="col">
+		<div class="header">Third Color Band:</div>
 		<md-radio-group ng-model="main.bandC" ng-change="main.getResult()">
-	      	<md-radio-button value="Black">Black</md-radio-button>
-			<md-radio-button value="Brown">Brown</md-radio-button>
-			<md-radio-button value="Red">Red</md-radio-button>
-			<md-radio-button value="Orange">Orange</md-radio-button>
-			<md-radio-button value="Yellow">Yellow</md-radio-button>
-			<md-radio-button value="Green">Green</md-radio-button>
-			<md-radio-button value="Blue">Blue</md-radio-button>
-			<md-radio-button value="Violet">Violet</md-radio-button>
-			<md-radio-button value="Gray">Gray</md-radio-button>
-			<md-radio-button value="White">White</md-radio-button>
-			<md-radio-button value="Gold">Gold</md-radio-button>
-			<md-radio-button value="Silver">Silver</md-radio-button>
+	      	<md-radio-button flex ng-repeat="option in main.c" value="{{option}}">
+	      		<div class="label" ng-class="option">{{option}}</div>
+	      	</md-radio-button>
     	</md-radio-group>
 	</div>
-	<div style="flex:0.2">
-		<div>Select Your fourth Color Band:</div>
+	<div class="col">
+		<div class="header">Fourth Color Band:</div>
 		<md-radio-group ng-model="main.bandD" ng-change="main.getResult()">
-	      	<md-radio-button value="Black">Black</md-radio-button>
-			<md-radio-button value="Brown">Brown</md-radio-button>
-			<md-radio-button value="Red">Red</md-radio-button>
-			<md-radio-button value="Yellow">Yellow</md-radio-button>
-			<md-radio-button value="Green">Green</md-radio-button>
-			<md-radio-button value="Blue">Blue</md-radio-button>
-			<md-radio-button value="Violet">Violet</md-radio-button>
-			<md-radio-button value="Gray">Gray</md-radio-button>
-			<md-radio-button value="Gold">Gold</md-radio-button>
-			<md-radio-button value="Silver">Silver</md-radio-button>
-			<md-radio-button value="None">None</md-radio-button>
+	      	<md-radio-button flex ng-repeat="option in main.d" value="{{option}}">
+	      		<div class="label" ng-class="option">{{option}}</div>
+	      	</md-radio-button>
     	</md-radio-group>
 	</div>
-	<div style="flex:0.2">Result:
-		<div>{{main.result}}</div>
+	<div class="col">
+		<div class="header">Resistance (ohms):</div>
+		<div>{{main.calcService.lower | number}}<span ng-show="main.calcService.upper != main.calcService.lower"> ~ {{main.calcService.upper | number}} </span></div>
+
 	</div>
+</div>
+<div flex="95" layout-align="end end" layout="row" style="margin-right:10px">
+	<md-button class="md-raised md-primary" ng-click="main.reset()">Reset</md-button>
 </div>

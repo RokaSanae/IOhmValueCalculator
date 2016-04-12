@@ -56,22 +56,27 @@
             "None" : 0.2
         }
 
-        return {
-
+        var service = {
+            lower : null,
+            upper : null,
             calcValue : function(Acolor,Bcolor,Ccolor,Dcolor){
-                if(Acolor && Bcolor && Ccolor){
-                    if(Dcolor){
-                        var lower = parseInt((bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor])*(1-bandD[Dcolor]));
-                        var upper = parseInt((bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor])*(1+bandD[Dcolor]));
-                         return lower + " ~ "+ upper;
-                    }
-                    else{
-                         return (bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor]);
-                    }
+
+                if(bandA[Acolor] === undefined || bandB[Bcolor] === undefined || bandC[Ccolor] === undefined ){
+                    service.lower = null;
+                    service.upper = null;
+                    return;
                 }
-               
+                if(bandD[Dcolor]){
+                    service.lower = (bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor])*(1-bandD[Dcolor]);
+                    service.upper = (bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor])*(1+bandD[Dcolor]);
+                }
+                else{
+                     service.lower = (bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor]);
+                     service.upper = (bandA[Acolor]*10 + bandB[Bcolor])*Math.pow(10 , bandC[Ccolor]);
+                }
             }
 
         };
+        return service;
     }
 })();

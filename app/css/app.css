@@ -1,7 +1,75 @@
-.test{
-	font-weight: bold;
+body{
+	font-family:Arial;
+}
+.title{
+	text-align: center;
+	font-size: 36px;
+}
+.main{
+	display : flex;
+}
+.col{
+	flex : 0.2;
+	border-right : 1px solid grey;
+	padding : 10px;
+}
+.header{
+	padding: 10px;
+}
+.Black{
+	background-color: black;
+	color:white;
+}
+.Brown{
+	background-color: brown;
+	color:white;
+}
+.Red{
+	background-color: red;
+	color:white;
+}
+.Orange{
+	background-color: orange;
+	color:black;
 }
 
-.main{
-	display: flex;
+.Yellow{
+	background-color: yellow;
+	color:black;
+}
+.Green{
+	background-color: green;
+	color:white;
+}
+.Blue{
+	background-color: blue;
+	color:white;
+}
+.Violet{
+	background-color: violet;
+	color:black;
+}
+.Gray{
+	background-color: grey;
+	color:white;
+}
+.White{
+	background-color: white;
+	color:black;
+}
+.Gold{
+	background-color: gold;
+	color:black;
+}
+.Silver{
+	background-color: silver;
+	color:white;
+}
+.label{
+	width: 100%;
+	padding: 3px;
+
+}
+.md-label{
+	display: flex !important;
 }

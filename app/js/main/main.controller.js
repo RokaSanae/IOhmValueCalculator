@@ -1,3 +1,9 @@
+/* 	This controller binds value to view.
+	It sets the options for each band.
+	It has two methods:
+		1.call service function to calculate resistance
+		2.reset all value
+*/
 (function(){
 	'use strict';
 	angular.module('app.main').controller('MainController',MainController);

@@ -1,3 +1,7 @@
+/* This service works as an interface required by Q1.
+   It contains a method to calculate resistance based on four color band.
+   It returns the upper bound and lower bound of the real resistance.
+*/
 (function () {
     'use strict';
 

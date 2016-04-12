@@ -3,14 +3,13 @@
 	angular.module('app.main').controller('MainController',MainController);
 
 	/* @ngInject */
-	function MainController($http,CalcService, ColorService){
+	function MainController($http,CalcService){
 		var vm = this;
 		vm.bandA = null;
 		vm.bandB = null;
 		vm.bandC = null;
 		vm.bandD = null;
 
-		vm.colorMap = ColorService;
 		vm.calcService = CalcService;
 
 		vm.a = [
@@ -72,6 +71,7 @@
 			vm.bandB = null;
 			vm.bandC = null;
 			vm.bandD = null;
+			vm.getResult();	
 		}
 	}
 })();

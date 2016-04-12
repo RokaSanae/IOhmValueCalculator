@@ -8,7 +8,9 @@ This project is built on Angular JS framework using Karma and Mocha as Unit Test
 1.install node
 2.run bower install
   2.1 if bower not found, do npm install bower -g
+  
   2.2 if it shows git module not found, run bower install in Git Bash
+  
 3.run npm install
 
 ##To run in local:

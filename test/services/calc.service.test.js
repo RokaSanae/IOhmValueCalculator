@@ -10,18 +10,27 @@ describe('Calc Service Test', function(){
 			expect(CalcService).to.exist;
 		}));
 		it('CalcService should have a calcValue method', inject(function(CalcService){
-			expect(CalcService).to.exist;
 			expect(CalcService.calcValue).be.a('function');
+		}));
+		it('CalcService should have two variables', inject(function(CalcService){
+			expect(CalcService.lower).to.eql(null);
+			expect(CalcService.upper).to.eql(null);
 		}));
 	});
 	describe('calcValue', function(){
 		it('CalcService should handle wrong value', inject(function(CalcService){
-			expect(CalcService).to.exist;
-			expect(CalcService.calcValue).be.a('function');
+			CalcService.calcValue(null,"ANY","TEST",null);
+			expect(CalcService.lower).to.eql(null);
+			expect(CalcService.upper).to.eql(null);
 		}));
 		it('CalcService should handle correct value', inject(function(CalcService){
-			expect(CalcService).to.exist;
-			expect(CalcService.calcValue('Black','Black','Black','Gold')).to.eql('0 ~ 0');
+			CalcService.calcValue("Orange","Red","Brown",null);
+			expect(CalcService.lower).to.eql(320);
+			expect(CalcService.upper).to.eql(320);
+
+			CalcService.calcValue("Orange","Red","Brown","Yellow");
+			expect(CalcService.lower).to.eql(304);
+			expect(CalcService.upper).to.eql(336);
 		}));
 	});
 });
